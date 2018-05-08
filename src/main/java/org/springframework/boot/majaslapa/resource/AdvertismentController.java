@@ -5,6 +5,7 @@
  */
 package org.springframework.boot.majaslapa.resource;
 import demain.response;
+import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,5 +26,8 @@ public class AdvertismentController {
     public response nextTestEndpoint(){
         return new response("Hey ya");
     }
-    
+    @GetMapping("/main")
+    public String getUI(Map<String, Object> model){
+        return "main";
+    }
 }
